@@ -1,45 +1,177 @@
-import Link from 'next/link'
-import MobileMenu from './mobile-menu'
+'use client';
+import { AnimatePresence, motion } from 'framer-motion';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+
+function Products() {
+  return (
+    <div>
+      <div className="flex">
+        <div>
+          <a href="#" className="mb-5 block text-base hover:text-chamolsee-100 text-chamolsee-200">
+            {' '}
+            Kuchnie na wymiar
+          </a>
+
+          <a href="#" className="mb-5 block text-base hover:text-chamolsee-100 text-chamolsee-200">
+            Szafy
+          </a>
+
+          <a href="#" className="mb-5 block text-base hover:text-chamolsee-100 text-chamolsee-200">
+            Oferta meble z litego drewna
+          </a>
+
+          <a href="#" className=" block text-base hover:text-chamolsee-100 text-chamolsee-200">
+            Montaż i renowacja mebli
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const Content = ({ selected, dir }: { selected: number | null; dir: string | null }) => {
+  return (
+    <motion.div
+      id="overlay-content"
+      initial={{
+        opacity: 0,
+        y: 8,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      exit={{
+        opacity: 0,
+        y: 8,
+      }}
+      className="absolute left-0 top-[calc(100%_+_24px)] w-80 rounded-lg border border-chamolsee-600 bg-gradient-to-br from-chamolsee-700 via-chamolsee-600 to-chamolsee-500 p-4"
+    >
+      <Bridge />
+      <Nub selected={selected} />
+      <div className="overflow-hidden">
+        {selected === 1 && (
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: dir === 'l' ? 100 : dir === 'r' ? -100 : 0,
+            }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
+          >
+            <Products />
+          </motion.div>
+        )}
+      </div>
+    </motion.div>
+  );
+};
+
+const Nub = ({ selected }: { selected: number | null }) => {
+  const [left, setLeft] = useState(0);
+
+  useEffect(() => {
+    moveNub();
+  }, [selected]);
+
+  const moveNub = () => {
+    if (selected) {
+      const hoveredTab = document.getElementById(`shift-tab-${selected}`);
+
+      const overlayContent = document.getElementById('overlay-content');
+
+      if (!hoveredTab || !overlayContent) return;
+
+      const tabRect = hoveredTab.getBoundingClientRect();
+
+      const { left: contentLeft } = overlayContent.getBoundingClientRect();
+
+      const tabCenter = tabRect.left + tabRect.width / 2 - contentLeft;
+
+      setLeft(tabCenter);
+    }
+  };
+
+  return (
+    <motion.span
+      style={{
+        clipPath: 'polygon(0 0, 100% 0, 50% 50%, 0% 100%)',
+      }}
+      animate={{ left }}
+      transition={{ duration: 0.25, ease: 'easeInOut' }}
+      className="absolute left-1/2 top-0 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-tl border border-neutral-600 bg-neutral-900"
+    />
+  );
+};
+
+function Bridge() {
+  return <div className="absolute -top-[24px] left-0 right-0 h-[24px]" />;
+}
+
+function Tab() {
+  const [selected, setSelected] = useState<number | null>(null);
+
+  const [dir, setDir] = useState<string | null>(null);
+
+  const handleSetSelected = (val: number | null) => {
+    if (typeof selected === 'number' && typeof val === 'number') {
+      setDir(selected > val ? 'r' : 'l');
+    } else if (val === null) {
+      setDir(null);
+    }
+
+    setSelected(val);
+  };
+
+  return (
+    <div onMouseLeave={() => handleSetSelected(null)} className="relative flex h-fit gap-2">
+      <button
+        id={`shift-tab-1`}
+        onMouseEnter={() => handleSetSelected(1)}
+        onClick={() => handleSetSelected(selected === 1 ? null : 1)}
+        className="hover:bg-chamolsee-200 p-1 sm:p-2 px-3 sm:px-5 rounded-md transition duration-500 ease-in-out text-chamolsee-100 hover:text-white text-xl sm:text-2xl font-semibold flex items-center sm:gap-1 gap-2"
+      >
+        <span>Oferta</span>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="3"
+          stroke="currentColor"
+          className={`transition-transform ${selected === 1 ? 'rotate-180' : ''} w-5 h-5 `}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+      <AnimatePresence>{selected && <Content selected={selected} dir={dir} />}</AnimatePresence>
+    </div>
+  );
+}
 
 export default function Header() {
   return (
-    <header className="absolute w-full z-30">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <header className="absolute w-full z-30 ">
+      <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Site branding */}
-          <div className="shrink-0 mr-4">
-            {/* Logo */}
-            <Link href="/" className="block" aria-label="Cruip">
-              <svg className="w-8 h-8 fill-current text-purple-600" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                <path d="M31.952 14.751a260.51 260.51 0 00-4.359-4.407C23.932 6.734 20.16 3.182 16.171 0c1.634.017 3.21.28 4.692.751 3.487 3.114 6.846 6.398 10.163 9.737.493 1.346.811 2.776.926 4.262zm-1.388 7.883c-2.496-2.597-5.051-5.12-7.737-7.471-3.706-3.246-10.693-9.81-15.736-7.418-4.552 2.158-4.717 10.543-4.96 16.238A15.926 15.926 0 010 16C0 9.799 3.528 4.421 8.686 1.766c1.82.593 3.593 1.675 5.038 2.587 6.569 4.14 12.29 9.71 17.792 15.57-.237.94-.557 1.846-.952 2.711zm-4.505 5.81a56.161 56.161 0 00-1.007-.823c-2.574-2.054-6.087-4.805-9.394-4.044-3.022.695-4.264 4.267-4.97 7.52a15.945 15.945 0 01-3.665-1.85c.366-3.242.89-6.675 2.405-9.364 2.315-4.107 6.287-3.072 9.613-1.132 3.36 1.96 6.417 4.572 9.313 7.417a16.097 16.097 0 01-2.295 2.275z" />
-              </svg>
-            </Link>
-          </div>
-
-          {/* Desktop navigation */}
-          <nav className="hidden md:flex md:grow">
-            {/* Desktop sign in links */}
-            <ul className="flex grow justify-end flex-wrap items-center">
+          <nav className="w-full">
+            <ul className="flex justify-center items-center space-x-2 sm:space-x-4 md:space-x-6 lg:space-x-10">
+              <button className="hover:bg-chamolsee-200 p-1 sm:p-2 px-3 sm:px-5 rounded-md transition duration-500 ease-in-out text-chamolsee-100 hover:text-white text-xl sm:text-2xl font-semibold">
+                <li>
+                  <Link href="#about">O nas</Link>
+                </li>
+              </button>
+              <Tab />
               <li>
-                <Link
-                  href="/signin"
-                  className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"
-                >
-                  Sign in
-                </Link>
-              </li>
-              <li>
-                <Link href="/signup" className="btn-sm text-white bg-purple-600 hover:bg-purple-700 ml-3">
-                  Sign up
-                </Link>
+                <button className="hover:bg-chamolsee-200 p-1 sm:p-2 px-3 sm:px-5 rounded-md transition duration-500 ease-in-out text-chamolsee-100 hover:text-white text-xl sm:text-2xl font-semibold">
+                  <Link href="/signin">Kontakt</Link>
+                </button>
               </li>
             </ul>
           </nav>
-
-          <MobileMenu />
-
         </div>
       </div>
     </header>
-  )
+  );
 }

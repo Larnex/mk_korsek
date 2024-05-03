@@ -1,22 +1,23 @@
 export const metadata = {
-  title: 'Home - Open PRO',
+  title: 'MK Korsęk - Meble na wymiar',
   description: 'Page description',
-}
+};
 
-import Hero from '@/components/hero'
-import Features from '@/components/features'
-import Newsletter from '@/components/newsletter'
-import Zigzag from '@/components/zigzag'
-import Testimonials from '@/components/testimonials'
+import Newsletter from '@/components/newsletter';
+import Zigzag from '@/components/zigzag';
+import Testimonials from '@/components/testimonials';
+import AboutUs from '../../components/about';
+import Realizations from '../../components/realizations';
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <Features />
+      {/* <Hero /> */}
+      <AboutUs />
       <Zigzag />
-      <Testimonials />
+      <Realizations />
+      {/* <Testimonials /> */}
       <Newsletter />
     </>
-  )
+  );
 }

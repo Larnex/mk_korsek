@@ -1,10 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    './app/**/*.{js,ts,jsx,tsx}',
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-  ],
+const withMT = require('@material-tailwind/react/utils/withMT');
+
+module.exports = withMT({
+  content: ['./app/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -30,6 +28,17 @@ module.exports = {
           800: '#38379C',
           900: '#262668',
         },
+        chamolsee: {
+          100: '#DED0BF',
+          200: '#B3957A',
+          300: '#87644B',
+          400: '#866F5E',
+          500: '#363431',
+          600: '#342823',
+          700: '#332E2C',
+          800: '#2A2523',
+          900: '#2B1E1A',
+        },
       },
       spacing: {
         '9/16': '56.25%',
@@ -38,7 +47,7 @@ module.exports = {
       },
       fontFamily: {
         inter: ['var(--font-inter)', 'sans-serif'],
-        'architects-daughter': ['var(--font-architects-daughter)', 'sans-serif']
+        'architects-daughter': ['var(--font-architects-daughter)', 'sans-serif'],
       },
       fontSize: {
         xs: '0.75rem',
@@ -53,7 +62,7 @@ module.exports = {
         '6xl': '4rem',
       },
       inset: {
-        'full': '100%',
+        full: '100%',
       },
       letterSpacing: {
         tighter: '-0.02em',
@@ -64,14 +73,12 @@ module.exports = {
         widest: '0.4em',
       },
       minWidth: {
-        '10': '2.5rem',
+        10: '2.5rem',
       },
       scale: {
-        '98': '.98'
+        98: '.98',
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-  ],
-}
+  plugins: [require('@tailwindcss/forms')],
+});
