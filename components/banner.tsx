@@ -16,7 +16,7 @@ export default function Banner() {
                 href="#contact"
                 rel="noreferrer"
               >
-                Skontaktuj<span className="hidden sm:inline"> się z nami</span>
+                Skontaktuj się z nami
               </a>{' '}
             </div>
             <button className="text-slate-500 hover:text-slate-400 pl-2 ml-3 border-l border-gray-700" onClick={() => setBannerOpen(false)}>
