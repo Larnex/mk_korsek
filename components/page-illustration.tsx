@@ -1,10 +1,10 @@
-import React from 'react';
-import HeaderImage from '../public/images/header-image.jpg';
+import { Button, Carousel, Typography } from '@material-tailwind/react';
+import Image from 'next/image';
+import Link from 'next/link';
 import HeaderImage2 from '../public/images/header-image-2.jpg';
 import HeaderImage3 from '../public/images/header-image-3.jpg';
 import HeaderImage4 from '../public/images/header-image-4.jpg';
-import Image from 'next/image';
-import { Button, Carousel, Typography } from '@material-tailwind/react';
+import HeaderImage from '../public/images/header-image.jpg';
 
 export default function PageIllustration() {
   return (
@@ -37,7 +37,16 @@ export default function PageIllustration() {
               </Typography>
               <div className="flex flex-col sm:flex-row justify-center gap-2 px-4 sm:px-0">
                 <Button size="lg" color="white" className="w-5/6 sm:w-auto mx-auto">
-                  Dowiedz się więcej
+                  <Link href={
+                    index === 0 ? '/kuchnie-na-wymiar' :
+                      index === 1 ? '/szafy' :
+                        index === 2 ? '/meble-z-litego-drewna' :
+                          '/montaz-i-renowacja-mebli'
+
+                  }>
+                    Dowiedz się więcej
+
+                  </Link>
                 </Button>
                 <Button size="lg" color="white" variant="text" className="w-5/6 sm:w-auto mx-auto">
                   Galeria

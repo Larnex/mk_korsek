@@ -8,20 +8,20 @@ function Products() {
     <div>
       <div className="flex">
         <div>
-          <a href="#" className="mb-5 block text-base hover:text-chamolsee-100 text-chamolsee-200">
+          <a href="/kuchnie-na-wymiar" className="mb-5 block text-base hover:text-chamolsee-100 text-chamolsee-200">
             {' '}
             Kuchnie na wymiar
           </a>
 
-          <a href="#" className="mb-5 block text-base hover:text-chamolsee-100 text-chamolsee-200">
+          <a href="/szafy" className="mb-5 block text-base hover:text-chamolsee-100 text-chamolsee-200">
             Szafy
           </a>
 
-          <a href="#" className="mb-5 block text-base hover:text-chamolsee-100 text-chamolsee-200">
-            Oferta meble z litego drewna
+          <a href="/meble-z-litego-drewna" className="mb-5 block text-base hover:text-chamolsee-100 text-chamolsee-200">
+            Meble z litego drewna
           </a>
 
-          <a href="#" className=" block text-base hover:text-chamolsee-100 text-chamolsee-200">
+          <a href="/montaz-i-renowacja-mebli" className=" block text-base hover:text-chamolsee-100 text-chamolsee-200">
             Montaż i renowacja mebli
           </a>
         </div>
@@ -46,7 +46,7 @@ const Content = ({ selected, dir }: { selected: number | null; dir: string | nul
         opacity: 0,
         y: 8,
       }}
-      className="absolute left-0 top-[calc(100%_+_24px)] w-80 rounded-lg border border-chamolsee-600 bg-gradient-to-br from-chamolsee-700 via-chamolsee-600 to-chamolsee-500 p-4"
+      className="absolute left-0 top-[calc(100%_+_24px)] w-80   border border-chamolsee-600 bg-gradient-to-br from-chamolsee-700 via-chamolsee-600 to-chamolsee-500 p-4"
     >
       <Bridge />
       <Nub selected={selected} />
@@ -159,13 +159,13 @@ export default function Header() {
             <ul className="flex justify-center items-center space-x-2 sm:space-x-4 md:space-x-6 lg:space-x-10">
               <button className="hover:bg-chamolsee-200 p-1 sm:p-2 px-3 sm:px-5 rounded-md transition duration-500 ease-in-out text-chamolsee-100 hover:text-white text-xl sm:text-2xl font-semibold">
                 <li>
-                  <Link href="#about">O nas</Link>
+                  <Link href="/#about">O nas</Link>
                 </li>
               </button>
               <Tab />
               <li>
                 <button className="hover:bg-chamolsee-200 p-1 sm:p-2 px-3 sm:px-5 rounded-md transition duration-500 ease-in-out text-chamolsee-100 hover:text-white text-xl sm:text-2xl font-semibold">
-                  <Link href="/signin">Kontakt</Link>
+                  <Link href="#contact">Kontakt</Link>
                 </button>
               </li>
             </ul>

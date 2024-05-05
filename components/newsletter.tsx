@@ -16,15 +16,15 @@ export default function ContactForm() {
   };
 
   return (
-    <section>
+    <section id="contact">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="relative bg-chamolsee-600 py-10 px-8 md:py-16 md:px-12" data-aos="fade-up">
           <div className="absolute right-0 top-0 -ml-40 pointer-events-none" aria-hidden="true">
             {/* Background illustration SVG here */}
           </div>
           <div className="relative flex flex-col lg:flex-col justify-between items-center">
-            <div className="mb-6 lg:mr-16 lg:mb-6 text-center lg:text-left lg:w-1/2">
-              <h3 className="h3 text-white mb-2">Kontakt</h3>
+            <div className="mb-6 lg:mb-6 text-center lg:text-left lg:w-1/2 w-full">
+              <h3 className="h3 text-white mb-2 ">Kontakt</h3>
               <p className="text-chamolsee-200 text-lg">Serdecznie zapraszamy do kontaktu z nami telefonicznie lub mailowo, aby omówić szczegóły naszej oferty. Z przyjemnością odpowiemy na wszystkie pytania.</p>
             </div>
             <form className="w-full lg:w-1/2" onSubmit={handleSubmit}>

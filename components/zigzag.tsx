@@ -1,5 +1,4 @@
 import Image, { StaticImageData } from 'next/image';
-import Link from 'next/link';
 
 import FeatImage01 from '../public/images/feature/header-image-1.jpg';
 import FeatImage02 from '../public/images/feature/header-image-2.jpg';
@@ -23,24 +22,28 @@ export default function Zigzag() {
               title="Kuchnie na wymiar"
               description="Specjalizujemy się w projektowaniu i produkcji kuchni, które są zarówno funkcjonalne, jak i estetyczne."
               reverse={false}
+              link='/kuchnie-na-wymiar'
             />
             <OfferItem
               image={FeatImage02}
               title="Szafy wnękowe"
               description="Oferujemy praktyczne zabudowy wnękowe, które maksymalizują dostępną przestrzeń, będąc jednocześnie eleganckim elementem wystroju wnętrza."
               reverse={true}
+              link='/szafy'
             />
             <OfferItem
               image={FeatImage03}
               title="Meble z litego drewna"
               description="Tworzymy wyjątkowe meble z litego drewna, które dodają charakteru każdemu wnętrzu, łącząc funkcjonalność z elegancją."
               reverse={false}
+              link='/meble-z-litego-drewna'
             />
             <OfferItem
               image={FeatImage04}
               title="Montaż i renowacja mebli"
               description="Świadczymy profesjonalne usługi montażu i renowacji mebli, zapewniając ich długotrwałość i estetyczny wygląd."
               reverse={true}
+              link='/montaz-i-renowacja-mebli'
             />
           </div>
         </div>
@@ -50,11 +53,12 @@ export default function Zigzag() {
   );
 }
 
-const OfferItem = ({ image, title, description, reverse }: {
+export const OfferItem = ({ image, title, description, reverse, link }: {
   image: StaticImageData,
   title: string,
   description: string,
-  reverse: boolean
+  reverse: boolean,
+  link?: string
 }) => (
 
   <div className={`md:grid md:grid-cols-12 md:gap-6 items-center mb-12 ${reverse ? 'md:flex-row-reverse' : ''}`}>
@@ -65,7 +69,10 @@ const OfferItem = ({ image, title, description, reverse }: {
       <div className={reverse ? "md:pl-4 lg:pl-12 xl:pl-16" : "md:pr-4 lg:pr-12 xl:pr-16"}>
         <h3 className="h3 mt-3">{title}</h3>
         <p className="text-lg text-gray-400 mt-4 mb-4">{description}</p>
-        <a className="text-lg text-green-500 hover:text-green-700 font-semibold cursor-pointer">Dowiedz się więcej →</a>
+        {link && (
+          <a href={link} className="text-lg text-green-500 hover:text-green-700 font-semibold cursor-pointer">Dowiedz się więcej →</a>
+        )}
+
         {/* <Link href={link}><a className="text-lg text-green-500 hover:text-green-700 font-semibold">Dowiedz się więcej →</a></Link> */}
       </div>
     </div>

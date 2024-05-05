@@ -20,3 +20,22 @@
 [x-cloak=''] {
   display: none;
 }
+
+.parallax {
+  height: 70vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 1px;
+}
+
+.background-parallax {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateZ(-1px) scale(2);
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
