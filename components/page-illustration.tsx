@@ -9,8 +9,9 @@ import HeaderImage from '../public/images/header-image.jpg';
 export default function PageIllustration() {
   return (
     <Carousel
-      className="rounded-xl h-screen"
+      className="h-screen"
       loop
+      autoplay
       navigation={({ setActiveIndex, activeIndex, length }) => (
         <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
           {new Array(length).fill('').map((_, i) => (
