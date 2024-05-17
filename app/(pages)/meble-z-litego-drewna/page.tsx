@@ -1,7 +1,7 @@
-import { HeaderImage } from "../../../components/header-image";
-import Realizations from "../../../components/realizations";
-import SolidWoodFurnitureOffer from "../../../components/solid-wood-furniture-offer";
-import MainImage from '../../../public/images/header-image-3.jpg';
+import { HeaderImage } from "@/components/header-image";
+import Realizations from "@/components/realizations";
+import SolidWoodFurnitureOffer from "@/components/solid-wood-furniture-offer";
+import MainImage from '@/public/images/header-image-3.jpg';
 
 export const metadata = {
       title: 'MK Korsęk - Meble z litego drewna',

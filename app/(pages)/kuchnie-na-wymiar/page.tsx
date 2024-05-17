@@ -1,7 +1,7 @@
-import { HeaderImage } from "../../../components/header-image";
-import CustomKitchensOffer from "../../../components/kitchen-offer";
-import Realizations from "../../../components/realizations";
-import MainImage from '../../../public/images/header-image.jpg';
+import { HeaderImage } from "@/components/header-image";
+import CustomKitchensOffer from "@/components/kitchen-offer";
+import Realizations from "@/components/realizations";
+import MainImage from '@/public/images/header-image.jpg';
 
 
 const images = [

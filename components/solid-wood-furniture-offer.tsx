@@ -1,7 +1,7 @@
 'use client';
 
-import SolidWoodImage1 from '../public/images/solid-wood-1.jpeg'; // Example image path
-import SolidWoodImage2 from '../public/images/solid-wood-2.jpeg'; // Example image path
+import SolidWoodImage1 from '@/public/images/solid-wood-1.jpeg'; // Example image path
+import SolidWoodImage2 from '@/public/images/solid-wood-2.jpeg'; // Example image path
 import { OfferItem } from './zigzag';
 
 export default function SolidWoodFurnitureOffer() {

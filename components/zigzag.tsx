@@ -1,9 +1,9 @@
 import Image, { StaticImageData } from 'next/image';
 
-import FeatImage01 from '../public/images/feature/header-image-1.jpg';
-import FeatImage02 from '../public/images/feature/header-image-2.jpg';
-import FeatImage03 from '../public/images/feature/header-image-3.jpg';
-import FeatImage04 from '../public/images/feature/header-image-4.jpg';
+import FeatImage01 from '@/public/images/feature/header-image-1.jpg';
+import FeatImage02 from '@/public/images/feature/header-image-2.jpg';
+import FeatImage03 from '@/public/images/feature/header-image-3.jpg';
+import FeatImage04 from '@/public/images/feature/header-image-4.jpg';
 
 export default function Zigzag() {
   return (

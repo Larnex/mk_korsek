@@ -1,8 +1,8 @@
 'use client';
 
+import ContactForm from "@/components/contact-form";
+import Footer from "@/components/ui/footer";
 import { useEffect } from 'react';
-import ContactForm from "../../components/contact-form";
-import Footer from "../../components/ui/footer";
 
 
 import AOS from 'aos';

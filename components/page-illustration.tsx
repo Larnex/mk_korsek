@@ -1,10 +1,10 @@
+import HeaderImage2 from '@/public/images/header-image-2.jpg';
+import HeaderImage3 from '@/public/images/header-image-3.jpg';
+import HeaderImage4 from '@/public/images/header-image-4.jpg';
+import HeaderImage from '@/public/images/header-image.jpg';
 import { Button, Carousel, Typography } from '@material-tailwind/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import HeaderImage2 from '../public/images/header-image-2.jpg';
-import HeaderImage3 from '../public/images/header-image-3.jpg';
-import HeaderImage4 from '../public/images/header-image-4.jpg';
-import HeaderImage from '../public/images/header-image.jpg';
 
 export default function PageIllustration() {
   return (

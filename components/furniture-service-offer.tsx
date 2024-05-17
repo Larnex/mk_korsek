@@ -1,7 +1,7 @@
 'use client';
 
-import FurnitureServiceImage1 from "../public/images/furniture-service-1.jpeg";
-import FurnitureServiceImage2 from "../public/images/furniture-service-2.jpeg";
+import FurnitureServiceImage1 from "@/public/images/furniture-service-1.jpeg";
+import FurnitureServiceImage2 from "@/public/images/furniture-service-2.jpeg";
 import { OfferItem } from "./zigzag";
 
 

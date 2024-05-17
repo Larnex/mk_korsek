@@ -1,7 +1,7 @@
 'use client';
 
-import ClosetImage1 from '../public/images/closet-1.jpeg'; // Example image path
-import ClosetImage2 from '../public/images/closet-2.jpeg'; // Example image path
+import ClosetImage1 from '@/public/images/closet-1.jpeg'; // Example image path
+import ClosetImage2 from '@/public/images/closet-2.jpeg'; // Example image path
 import { OfferItem } from './zigzag';
 
 function CustomClosetsOffer() {

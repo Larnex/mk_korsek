@@ -1,7 +1,7 @@
 'use client';
 
-import KitchenImage1 from '../public/images/kitchen1.jpeg';
-import KitchenImage2 from '../public/images/kitchen2.jpeg';
+import KitchenImage1 from '@/public/images/kitchen1.jpeg';
+import KitchenImage2 from '@/public/images/kitchen2.jpeg';
 import { OfferItem } from "./zigzag";
 
 
