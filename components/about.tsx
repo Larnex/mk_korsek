@@ -1,4 +1,4 @@
-import { FaHome, FaTree, FaHandshake, FaTools } from 'react-icons/fa';
+import { FaHandshake, FaHome, FaTools, FaTree } from 'react-icons/fa';
 
 const AboutUs = () => {
   return (
@@ -24,7 +24,7 @@ const AboutUs = () => {
             <Feature
               icon={<FaTree size={40} className="text-chamolsee-300 mb-4" />}
               title="Ręcznie wykonane z pasją"
-              description="Co nas wyróżnia to fakt, że każdy nasz mebel jest tworzony oTród podstaw, ręcznie, co gwarantuje jego wyjątkowość i niepowtarzalny charakter."
+              description="Co nas wyróżnia to fakt, że każdy nasz mebel jest tworzony od podstaw, ręcznie, co gwarantuje jego wyjątkowość i niepowtarzalny charakter."
               delay={200}
             />
 

@@ -1,7 +1,9 @@
 'use client';
 import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import Logo from '../../public/images/logo-removebg.png';
 
 function Products() {
   return (
@@ -9,19 +11,15 @@ function Products() {
       <div className="flex">
         <div>
           <a href="/kuchnie-na-wymiar" className="mb-5 block text-base hover:text-chamolsee-100 text-chamolsee-200">
-            {' '}
             Kuchnie na wymiar
           </a>
-
           <a href="/szafy" className="mb-5 block text-base hover:text-chamolsee-100 text-chamolsee-200">
             Szafy
           </a>
-
           <a href="/meble-z-litego-drewna" className="mb-5 block text-base hover:text-chamolsee-100 text-chamolsee-200">
             Meble z litego drewna
           </a>
-
-          <a href="/montaz-i-renowacja-mebli" className=" block text-base hover:text-chamolsee-100 text-chamolsee-200">
+          <a href="/montaz-i-renowacja-mebli" className="block text-base hover:text-chamolsee-100 text-chamolsee-200">
             Montaż i renowacja mebli
           </a>
         </div>
@@ -46,7 +44,7 @@ const Content = ({ selected, dir }: { selected: number | null; dir: string | nul
         opacity: 0,
         y: 8,
       }}
-      className="absolute left-0 top-[calc(100%_+_24px)] w-80   border border-chamolsee-600 bg-gradient-to-br from-chamolsee-700 via-chamolsee-600 to-chamolsee-500 p-4"
+      className="absolute left-0 top-[calc(100%_+_24px)] w-80 border border-chamolsee-600 bg-gradient-to-br from-chamolsee-700 via-chamolsee-600 to-chamolsee-500 p-4"
     >
       <Bridge />
       <Nub selected={selected} />
@@ -78,15 +76,12 @@ const Nub = ({ selected }: { selected: number | null }) => {
   const moveNub = () => {
     if (selected) {
       const hoveredTab = document.getElementById(`shift-tab-${selected}`);
-
       const overlayContent = document.getElementById('overlay-content');
 
       if (!hoveredTab || !overlayContent) return;
 
       const tabRect = hoveredTab.getBoundingClientRect();
-
       const { left: contentLeft } = overlayContent.getBoundingClientRect();
-
       const tabCenter = tabRect.left + tabRect.width / 2 - contentLeft;
 
       setLeft(tabCenter);
@@ -111,7 +106,6 @@ function Bridge() {
 
 function Tab() {
   const [selected, setSelected] = useState<number | null>(null);
-
   const [dir, setDir] = useState<string | null>(null);
 
   const handleSetSelected = (val: number | null) => {
@@ -133,7 +127,6 @@ function Tab() {
         className="hover:bg-chamolsee-200 p-1 sm:p-2 px-3 sm:px-5 rounded-md transition duration-500 ease-in-out text-chamolsee-100 hover:text-white text-xl sm:text-2xl font-semibold flex items-center sm:gap-1 gap-2"
       >
         <span>Oferta</span>
-
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -152,11 +145,39 @@ function Tab() {
 
 export default function Header() {
   return (
-    <header className="absolute w-full z-30 ">
+    <header className="absolute w-full z-30 shadow-lg">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          <nav className="w-full">
-            <ul className="flex justify-center items-center space-x-2 sm:space-x-4 md:space-x-6 lg:space-x-10">
+        <div className="flex flex-col sm:flex-row items-center justify-between py-2 sm:py-4">
+          <div className="flex items-center space-x-4">
+            <Image src={Logo} className="h-28 w-28 
+            sm:h-32 sm:w-32 cursor-pointer"
+              placeholder="empty"
+              quality={100}
+              layout="fixed"
+              objectFit="contain"
+              objectPosition="center"
+              alt="MK Korsęk - Meble na wymiar"
+              title="MK Korsęk - Meble na wymiar
+            "
+              onClick={() => {
+                window.location.href = '/';
+              }}
+            />
+            <div className="flex flex-col sm:flex-col items-center sm:items-start text-center sm:text-left space-y-1 sm:space-y-0 sm:space-x-4">
+              <a href="mailto:mkkorsek@gmail.com" className="text-base font-medium text-chamolsee-100 hover:text-chamolsee-200 focus:text-chamolsee-200">
+                mkkorsek@gmail.com
+              </a>
+              <a href="tel:+48505528266" className="text-base font-medium text-chamolsee-100 hover:text-chamolsee-200 focus:text-chamolsee-200">
+                +48 505 528 266
+              </a>
+              <a href="tel:+48506898524" className="text-base font-medium text-chamolsee-100 hover:text-chamolsee-200 focus:text-chamolsee-200">
+                +48 506 898 524
+              </a>
+            </div>
+          </div>
+          <div className="w-full sm:w-auto border-t sm:border-t-0 sm:border-l border-gray-300 mt-2 sm:mt-0 sm:pl-4"></div>
+          <nav className="w-full mt-2 sm:mt-0">
+            <ul className="flex justify-center sm:justify-end items-center space-x-2 sm:space-x-4 md:space-x-6 lg:space-x-10">
               <button className="hover:bg-chamolsee-200 p-1 sm:p-2 px-3 sm:px-5 rounded-md transition duration-500 ease-in-out text-chamolsee-100 hover:text-white text-xl sm:text-2xl font-semibold">
                 <li>
                   <Link href="/#about">O nas</Link>

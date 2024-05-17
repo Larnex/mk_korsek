@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import ContactForm from "../../components/newsletter";
+import ContactForm from "../../components/contact-form";
 import Footer from "../../components/ui/footer";
 
 

@@ -45,12 +45,9 @@ export default function PageIllustration() {
 
                   }>
                     Dowiedz się więcej
-
                   </Link>
                 </Button>
-                <Button size="lg" color="white" variant="text" className="w-5/6 sm:w-auto mx-auto">
-                  Galeria
-                </Button>
+
               </div>
             </div>
           </div>
