@@ -4,7 +4,8 @@ import Realizations from "@/components/realizations";
 import MainImage from '@/public/images/header-image-2.jpg';
 
 export const metadata = {
-      title: 'MK Korsęk - Szafy',
+      title: 'MK Korsęk - Szafy na wymiar | Garderoby i zabudowy',
+      description: 'Szafy na wymiar i garderoby dostosowane do Twoich potrzeb. Funkcjonalne rozwiązania i profesjonalny montaż.',
 };
 
 const images = [

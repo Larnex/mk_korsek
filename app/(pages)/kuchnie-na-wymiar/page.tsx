@@ -3,6 +3,10 @@ import CustomKitchensOffer from "@/components/kitchen-offer";
 import Realizations from "@/components/realizations";
 import MainImage from '@/public/images/header-image.jpg';
 
+export const metadata = {
+  title: 'MK Korsęk - Kuchnie na wymiar | Projektowanie i realizacja',
+  description: 'Profesjonalne kuchnie na wymiar. Kompleksowa obsługa od projektu po montaż. Najwyższa jakość materiałów i wykonania.',
+};
 
 const images = [
       '/mk_korsek_optimized_images/kuchnia/kuchnia-1.jpeg',

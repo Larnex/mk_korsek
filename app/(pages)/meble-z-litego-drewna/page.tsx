@@ -4,7 +4,8 @@ import SolidWoodFurnitureOffer from "@/components/solid-wood-furniture-offer";
 import MainImage from '@/public/images/header-image-3.jpg';
 
 export const metadata = {
-      title: 'MK Korsęk - Meble z litego drewna',
+      title: 'MK Korsęk - Meble z litego drewna | Naturalne materiały',
+      description: 'Wyjątkowe meble z litego drewna. Łączymy tradycyjne rzemiosło z nowoczesnymi rozwiązaniami.',
 };
 
 const images = [

@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'MK Korsęk - Meble na wymiar',
-  description: 'Page description',
+  title: 'MK Korsęk - Meble na wymiar | Strona główna',
+  description: 'Profesjonalna firma stolarska specjalizująca się w produkcji mebli na wymiar. Oferujemy kuchnie, szafy i meble z litego drewna.',
 };
 
 import Newsletter from '@/components/contact-form';
