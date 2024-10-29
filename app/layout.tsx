@@ -30,6 +30,7 @@ export const metadata = {
     locale: 'pl_PL',
     type: 'website',
   },
+  metadataBase: new URL('https://mkkorsek.pl'),
 }
 
 export default function RootLayout({
